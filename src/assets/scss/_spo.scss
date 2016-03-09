@@ -1,15 +1,143 @@
 //  SPO Specific Styles
 //  -----------------------------
 //
+//
+//  Table of Contents:
+//
+//   1. Settings
+//   2. Global Styles
+//   3. Home Page
+ 
 
-//Global
+//   1.  Settings
+//   ---------------------
+
+// Colors
+//
+
+$green: #5cbe94;
+$red: #d13f32;
+$deep-red: #ad1e11;
+
+//   2.  Global Styles
+//   ---------------------
+
+// Buttons
+// 
+
+.safety{ 
+  position: fixed;
+  top: 0;
+  // right: 10%;
+  z-index: 1001;
+  font-weight: 700;
+  font-size: rem-calc(14);
+  max-height: 28px;
+
+
+  .x {
+    display: inline-block;
+    float: right;
+    text-align: center;
+    padding-top: 3px;
+    width: 28px;
+    height: 28px;
+    background-color: $deep-red;
+    color: white;
+  }
+}
+.button.alert {
+  margin: 0;
+}
+.button.hollow.white {
+  @include button-hollow-style(#fff);
+}
+.button.hollow.white:hover, .button.hollow.white:focus {
+    border-color: white;
+    color: white;
+    background-color:rgba(10,140,130,1);
+}
+// Panels
+// 
+.panels .column {
+  margin: 20px 0;
+}
+.panel {
+  background-color: #fff;
+  border: 1px solid #ebdebf;
+  padding: 15px;
+}
+// Top Bar
+// 
+
 #sticky-menu {
   background-color: #373737;
 }
-
-
-// Home Page
-.hero {
-  height: 526px;
-  background: url('../img/hero_background.jpg') repeat-y center bottom;
+.top-bar {
+  li {
+    text-align:left;
+  }
+  li.menu-item {
+    padding-bottom: 11px;
+    vertical-align: bottom;
+  }
+  .menu-item a {
+    border-left: 2px solid $green;
+    padding: 0 0 0 10px;
+    font-family: $header-font-family;
+    color: white;
+    font-size: rem-calc(17);
+    line-height: rem-calc(22);
+  }
+  .dropdown.menu .has-submenu.is-right-arrow > a::after {
+    border: none;
+  }
+  .language {
+    text-align: right;
+  }
 }
+
+// Footer
+//
+
+footer {
+  background: url('../img/footer_tile.jpg') repeat center top;
+}
+
+//   3.  Home Page
+//   ---------------------
+
+html, body {
+  background-color: #f9f3e4;
+}
+
+.hero {
+  padding-top: 80px;
+  // height: 526px;
+  background: url('../img/hero_background.jpg') repeat-y center bottom;
+  
+  .intro {
+    padding-left: 30px;  
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    color: white;
+    font-size: rem-calc(70);
+    line-height: rem-calc(80);
+  }
+
+  p {
+    font-size: rem-calc(24);
+    line-height: rem-calc(35);
+    font-weight: 600;
+  }
+  @include breakpoint(medium down){
+    height: auto;
+  }
+}
+
+.band.danger {
+  background: #c33b2f url('../img/red_tile.jpg') repeat center top;
+}
+

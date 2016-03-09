@@ -50,14 +50,14 @@ $primary-color: #2199e8;
 $secondary-color: #777;
 $success-color: #3adb76;
 $warning-color: #ffae00;
-$alert-color: #ec5840;
+$alert-color: #d13f32;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
-$body-font-color: $black;
+$body-background: transparent;
+$body-font-color: #373737;
 $body-font-family: 'Raleway', sans-serif;
 $body-antialiased: true;
 $text-direction: ltr;
@@ -223,7 +223,7 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 0.85em 1em;
+$button-padding: 0.6em 1em;
 $button-margin: 0 $global-margin $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;

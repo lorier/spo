@@ -18,5 +18,30 @@ $(document).foundation();
 // }
 
 $(document).ready(function() {
-  $('#sticky-menu').scrollToFixed();
+  	$('#sticky-menu').scrollToFixed();
+  
+
+  	var s = $('.safety').width();
+  
+	setSafetyPosition(s);
+	
+	$( window ).resize(function(){
+	  	setSafetyPosition(s)
+	  });
 });
+
+function getWindowWidth(){
+	return $(window).width();
+}
+
+function setSafetyPosition(s){
+	if ( getWindowWidth() > 639 ){
+		//get the left offset of the menu bar
+		var mOffset = $('.menu').offset().left;
+	 	var mWidth = $('.menu').width()
+	 	var sPosition = (mWidth + mOffset) - s +'px';
+		$('.safety').css({ 'left': sPosition });
+	}else {
+		$('.safety').css({'left': '40%', 'margin': "0, auto" });
+	}
+}
