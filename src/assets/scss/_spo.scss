@@ -29,15 +29,22 @@ $topbar-unstack-breakpoint: 900px;
 
 //   Buttons
 // 
-
-.safety { 
+.safety-wrap {
   position: fixed;
   top: 0;
-  // right: 10%;
   z-index: 1001;
+  @include breakpoint(medium down){
+    background-color: $dark-gray;
+    width: 100%;
+  }
+
+}
+.safety { 
+  // right: 10%;
   font-weight: 700;
   font-size: rem-calc(14);
   max-height: 28px;
+  display: inline-block;
 
   .x {
     display: inline-block;
@@ -206,7 +213,6 @@ $topbar-unstack-breakpoint: 900px;
      @include breakpoint(medium down) {
       display: none !important;
     }
-
   }
   .is-submenu-item.is-dropdown-submenu-item a {
     color: $dark-gray !important;
@@ -214,6 +220,19 @@ $topbar-unstack-breakpoint: 900px;
   }
   .is-drilldown-sub {
     background-color: $dark-gray !important;
+  }
+  ul.js-dropdown-active, .dropdown.menu .submenu {
+
+    margin-top: 7px;
+    border: 1px solid $dark-gray;
+  }
+  .js-dropdown-active li {
+      margin: 7px 0;
+  }
+  .js-dropdown-active li a {
+    font-family: $body-font-family;
+    font-size: rem-calc(15);
+    border: none;    
   }
 }
 
