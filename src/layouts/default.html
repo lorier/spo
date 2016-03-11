@@ -11,7 +11,8 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:600,600italic,800,400italic,400|Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
-  <body>
+  <body class="{{page}}">
+    {{> safety_button}}
 
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
     {{> body}}

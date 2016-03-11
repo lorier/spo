@@ -1,40 +1,60 @@
-$(document).foundation();
 
 
 $(document).ready(function() {
-  
-  	var s = $('.safety-wrap').width();
-  	var mobileMargin = setSafetyTopMarginforMobile();
+	$(document).foundation();
 
-  	$('#sticky-menu').scrollToFixed({marginTop: mobileMargin});
   
-	setSafetyPosition(s);
+  	var safetyWidth = $('.safety-wrap').width();
+  	var safetyHeight = $('.safety-wrap').height();
+
+	var isMenuFixed = false;
+  	
+  	$('#sticky-menu').scrollToFixed({
+
+  		preFixed: function(){ 
+  			isMenuFixed = true;
+  		},
+  		postFixed: function(){
+  			isMenuFixed = false;
+  		} 	
+  	});
+  
+	setSafetyHorizPosition(safetyWidth);
 	
 	$( window ).resize(function(){
-	  	setSafetyPosition(s);
-	  	mobileMargin = setSafetyTopMarginforMobile();
-	  });
-	console.log($('.safety-wrap').height());
+	  	setSafetyHorizPosition(safetyWidth);
+	  	setTopMargin(isMenuFixed, safetyHeight);
+	});
+
+	$( window ).scroll(function(){
+		setTopMargin(isMenuFixed, safetyHeight);
+	})
 });
-function setSafetyTopMarginforMobile(){
-	return getWindowWidth() > 1024 ? 0 : $('.safety-wrap').height();
+
+
+function isWindowDesktop(){
+	return $(window).width() > 1023;
 }
+function setTopMargin(menuFixed, height){
+	var desktop = isWindowDesktop();
+	if ( menuFixed && !desktop ) {
+		$('#sticky-menu').css({'margin-top': height});
+		$('.safety-wrap').css({ 'background-color': '#373737' });
+	} else {
+		$('#sticky-menu').css({'margin-top': '0px'});
+		$('.safety-wrap').css({ 'background-color': 'transparent' });
 
-function getWindowWidth(){
-	return $(window).width();
-}
-
-function setSafetyPosition(s){
-	if ( getWindowWidth() > 1024 ){
-
-		//get the left offset of the menu bar
-		var tOffset = $('.top-bar').offset().left;
-		console.log(tOffset);
-	 	var tWidth = $('.top-bar').width()
-	 	var sPosition = (tWidth + tOffset) - s +'px';
-		$('.safety-wrap').css({ 'left': sPosition });
-	}else {
-		$('.safety-wrap').css({'left': '0', 'margin': "0, auto", 'text-align': 'center' });
-		$('.safety').css()
 	}
 }
+function setSafetyHorizPosition(safetyWidth){
+	if ( isWindowDesktop() ){
+		//get the left offset of the menu bar
+		var tOffset = $('.top-bar').offset().left;
+	 	var tWidth = $('.top-bar').width()
+	 	var sPosition = (tWidth + tOffset) - safetyWidth +'px';
+		$('.safety-wrap').css({ 'left': sPosition, 'text-align': 'left', 'width': 'auto', 'background-color': 'transparent'  });
+	}else {
+		$('.safety-wrap').css({ 'left': 0, 'text-align': 'center', 'width': '100%'});
+	}
+}
+

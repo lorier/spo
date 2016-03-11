@@ -70,6 +70,14 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $rem-base: 16px;
 
+$dark-gray: #373737;
+$lightest_gray: #fcfcfc;
+$green: #5cbe94;
+$red: #d13f32;
+$deep-red: #ad1e11;
+$cream: #f9f3e4;
+$tan: #ebdebf;
+
 // 2. Breakpoints
 // --------------
 
@@ -135,8 +143,8 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $medium-gray;
-$hr-margin: rem-calc(20) auto;
+$hr-border: 1px solid $tan;
+$hr-margin: rem-calc(30) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
