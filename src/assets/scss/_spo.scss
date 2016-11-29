@@ -23,6 +23,7 @@
 // $cream: #f9f3e4;
 // $tan: #ebdebf;
 
+
 $transition: all 0.2s ease-in-out;
 
 $topbar-unstack-breakpoint: 900px;
@@ -30,6 +31,66 @@ $topbar-unstack-breakpoint: 900px;
 //   2.  Global Styles
 //   ---------------------
 
+.max-width-900 {
+  max-width: 875px;
+  margin: 0 auto !important;
+}
+
+.main-content {
+  h3 {
+    text-transform: uppercase;
+    font-size: rem-calc(20) !important;
+    margin-top: 30px;
+  }
+  h4 {
+    font-family: $body-font-family;
+    font-weight: 600;
+    color: $dark-gray;
+    font-size: rem-calc(17);
+  }
+  .content {
+    max-width: 768px;
+  }
+  ul:not(.accordion) li a {
+    text-decoration: underline;
+    color: $blue;
+  }
+  ul {
+    // padding-left: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+
+  .callout {
+    border: 1px solid $tan;
+    background-color: $cream;
+    padding: 30px;
+  }
+  .intro-text {
+    font-size: rem-calc(25);
+    color: $green;
+    text-align: left;
+    font-weight: 600;
+    line-height: rem-calc(35);
+  }
+}
+
+
+//Fix Flash of unstyled content
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
 
 // Top Bar
 // 
@@ -48,6 +109,14 @@ $topbar-unstack-breakpoint: 900px;
     .menu-item a, .is-drilldown-submenu a  {
       border-left: 2px solid $green;
       padding: 0px;
+    }
+    .top-bar-right {
+      float: right;
+      width: auto;
+    }
+    .top-bar-left {
+      float: left;
+      width: auto;
     }
     
     .top-bar-right ul {
@@ -132,7 +201,7 @@ $topbar-unstack-breakpoint: 900px;
   }
 
   .js-drilldown-back {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .js-drilldown-back::before {
@@ -145,6 +214,12 @@ $topbar-unstack-breakpoint: 900px;
 
   .language {
     text-align: right;
+    .dropdown-pane {
+      background-color: white;
+    }
+    ul {
+      margin: 0;
+    }
   }
 
   .menu-text {
@@ -155,10 +230,7 @@ $topbar-unstack-breakpoint: 900px;
       display: none !important;
     }
   }
-
-  .is-drilldown-submenu {
-    background-color: $dark-gray !important;
-  }
+  
 
   ul.js-dropdown-active, .dropdown.menu .submenu {
     padding: 15px;
@@ -177,17 +249,45 @@ $topbar-unstack-breakpoint: 900px;
     border: none; 
     color: $dark-gray !important;  
 
+
     &:hover {
       color: $green;
       text-decoration: underline;
     } 
   }
 }
-
+/// Mobile Menu
 @include breakpoint(medium down) {
-  #menu-wrapper .top-bar-right {
-    float: none;
+  // #menu-wrapper .top-bar-right {
+  //   float: none;
+  // }
+  .language {
+    margin-left: 9px;
+    margin-top: 5px;
+    display: none;
   }
+  .js-drilldown-back {
+    margin-bottom: 5px;
+  }
+  .is-drilldown-submenu {
+    background-color: $dark-gray !important;
+  }
+  // .submenu .is-submenu-item.is-drilldown-submenu-item a{
+  //       padding: 5px inherit;
+  // }
+  .js-drilldown-back > a::before {
+    // content: '';
+    // display: block;
+    // width: 0;
+    // height: 0;
+    // border: inset 6px;
+    border-color: transparent #fff transparent transparent;
+    // border-right-style: solid;
+    // border-left-width: 0;
+    // display: inline-block;
+    // vertical-align: middle;
+    // margin-right: 0.75rem;
+}
 }
  @include breakpoint(small only){
   .top-bar .menu.expanded > li {
@@ -235,6 +335,7 @@ $topbar-unstack-breakpoint: 900px;
   padding-left: 30px;
   font-size: rem-calc(15);
   font-weight: 600;
+  line-height: rem-calc(19);
 }
 .accordion-title {
   &:before {
@@ -257,6 +358,7 @@ li.is-active .accordion-title:before {
   top: 0;
   z-index: 1001;
   line-height: 0;
+  display: none;
   @include breakpoint(medium down){
     // background-color: $dark-gray;
     width: 100%;
@@ -264,7 +366,7 @@ li.is-active .accordion-title:before {
 
 }
 .safety { 
-  // right: 10%;
+  right: 10%;
   font-weight: 700;
   font-size: rem-calc(14);
   max-height: 28px;
@@ -326,6 +428,13 @@ li.is-active .accordion-title:before {
     content:  "\f0d7"
   }
 }
+.dropdown-pane.is-open {
+  background-color: #fff;
+  li {
+    border-bottom: 1px solid $dark-gray;
+    padding: 5px 0;
+  }
+}
 .get_order .dropdown-pane {
   background-color: $lightest-gray;
   padding: 0;
@@ -344,6 +453,10 @@ li.is-active .accordion-title:before {
 .panels {
   margin-top: 40px;
   margin-top: 50px;
+  &.second-row {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 }
 .panels .column {
   margin: 20px 0;
@@ -355,7 +468,7 @@ li.is-active .accordion-title:before {
   background-color: #fff;
   border: 1px solid #ebdebf;
   padding: 30px 20px 50px;
-  height: 428px;
+  height: 500px;
   
   img {
     display: inline-block;
@@ -383,12 +496,12 @@ li.is-active .accordion-title:before {
 
 @include breakpoint(medium only){
   .panel {
-    height: 550px;
+    height: 576px;
   }
 
   .panel h3 {
     font-size: rem-calc(24);
-    text-align: center;
+
   }
 
 }
@@ -498,7 +611,7 @@ body.index {
 
 .about {
     text-align: center;
-    margin: 80px 0;
+    margin: 80px 0 0;
 
    .title {
     text-transform: uppercase;
@@ -510,18 +623,13 @@ body.index {
     margin-bottom: 30px;
   }
 
-  .intro-text {
-    font-size: rem-calc(25);
-    color: $green;
-    text-align: left;
-    font-weight: 600;
-    line-height: rem-calc(35);
-  }
+  
   p {
     text-align: left;
   }
 }
 footer {
+  margin-top: 80px;
   padding: 30px 0 15px 0;
   .sharing {
     color: white;
@@ -587,38 +695,47 @@ body.get_order {
   background: url('../img/green_tile.jpg');
   margin-bottom: 30px;
   .title-band{
-    padding: 20px 0 10px;
+    padding: 20px 0 20px;
+
+  }
+  .title-container{
+    display: table;
+    
   }
   h1 {
+    display: table-cell;
+    vertical-align: middle;
     color: white;
     font-size: rem-calc(40);
     line-height: rem-calc(50);
     max-width: 431px;
-    float: left;
   }
   span {
-    content: url('../img/SVG_icons-05.svg');
     width: 100px;
     height: 100px;
     float: left;  
     margin-right: 30px;
   }
+  &.am span {
+    content: url('../img/SVG_icons-01.svg');
+  }
+  &.what span {
+    content: url('../img/SVG_icons-02.svg');
+  }
+  &.should span {
+    content: url('../img/SVG_icons-03.svg');
+  }
+  &.can span {
+    content: url('../img/SVG_icons-04.svg');
+  }
+  &.how span {
+    content: url('../img/SVG_icons-05.svg');
+  }
+  &.now span {
+    content: url('../img/SVG_icons-06.svg');
+  }
 }
-.main-content {
-  h3 {
-    text-transform: uppercase;
-    font-size: rem-calc(20) !important;
-  }
-  h4 {
-    font-family: $body-font-family;
-    font-weight: 600;
-    color: $dark-gray;
-    font-size: rem-calc(17);
-  }
-  .content {
-    max-width: 768px;
-  }
-}
+
 
 // Side Menu
 // 
@@ -627,6 +744,7 @@ body.get_order {
   border: 1px solid $tan;
   padding: 10px 20px;
   max-width: 220px;
+  margin-bottom: 30px;
   ul {
     font-family: $header-font-family;
     font-size: rem-calc(15);
@@ -635,6 +753,8 @@ body.get_order {
   li a {
     display: block;
     margin: 15px 0;
+    color: black !important;
+    text-decoration: none !important;
   }
   li a:hover, li a:active {
     color: $green;
