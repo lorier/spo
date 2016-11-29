@@ -1,9 +1,7 @@
 
-
 $(document).ready(function() {
 	$(document).foundation();
 
-	
   	$('.safety-wrap').css({'display': 'inline-block'});
   	var safetyWidth = $('.safety-wrap').width();
   	var safetyHeight = $('.safety-wrap').height();
@@ -58,4 +56,5 @@ function setSafetyHorizPosition(safetyWidth){
 		$('.safety-wrap').css({ 'left': 0, 'text-align': 'center', 'width': '100%'});
 	}
 }
+
 

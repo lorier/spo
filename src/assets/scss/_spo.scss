@@ -31,12 +31,18 @@ $topbar-unstack-breakpoint: 900px;
 //   2.  Global Styles
 //   ---------------------
 
+strong em {
+  font-weight: bold;
+}
 .max-width-900 {
   max-width: 875px;
   margin: 0 auto !important;
 }
 
 .main-content {
+  h2 {
+    margin-top: 30px;
+  }
   h3 {
     text-transform: uppercase;
     font-size: rem-calc(20) !important;
@@ -44,7 +50,7 @@ $topbar-unstack-breakpoint: 900px;
   }
   h4 {
     font-family: $body-font-family;
-    font-weight: 600;
+    font-weight: 700;
     color: $dark-gray;
     font-size: rem-calc(17);
   }
@@ -68,11 +74,15 @@ $topbar-unstack-breakpoint: 900px;
     padding: 30px;
   }
   .intro-text {
-    font-size: rem-calc(25);
+    font-size: rem-calc(23);
     color: $green;
     text-align: left;
     font-weight: 600;
-    line-height: rem-calc(35);
+    line-height: rem-calc(32);
+  }
+  p a {
+    color: $blue;
+    text-decoration: underline;
   }
 }
 
@@ -348,9 +358,23 @@ $topbar-unstack-breakpoint: 900px;
   }
   
 }
+li.accordion-item {
+  margin-bottom: 0;
+}
 li.is-active .accordion-title:before {
     content:  "\f0d7";
 }
+.accordion ul li {
+  list-style-type: disc;
+}
+.accordion ol li {
+  list-style-type: decimal;
+}
+.accordion-content a {
+  color: $blue;
+  text-decoration: underline;
+}
+
 //   Buttons
 // 
 .safety-wrap {
@@ -480,7 +504,8 @@ li.is-active .accordion-title:before {
   }
 
   h3 {
-    font-size: rem-calc(30);
+    font-size: rem-calc(30) !important;
+    text-transform: none;
   }
   p {
     @extend .show-for-medium;
