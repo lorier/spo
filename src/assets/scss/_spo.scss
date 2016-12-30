@@ -485,7 +485,12 @@ li.is-active .accordion-title:before {
 .panels .column {
   margin: 20px 0;
 }
-
+.large-9 .panels{
+  margin-top: 0;
+  h3 {
+    font-size: rem-calc(24) !important;
+  }
+}
 .panel {
   position: relative;
   text-align: center;
