@@ -30,9 +30,14 @@ $topbar-unstack-breakpoint: 900px;
 
 //   2.  Global Styles
 //   ---------------------
-
+ol ul {
+  list-style-type: initial;
+}
 strong em {
   font-weight: bold;
+}
+.green {
+  color: $green !important;
 }
 .max-width-900 {
   max-width: 875px;
@@ -49,6 +54,14 @@ strong em {
     margin-top: 30px;
   }
   h4 {
+    text-transform: none;
+    // font-family: $body-font-family;
+    // font-weight: bold;
+    font-size: rem-calc(20) !important;
+    margin-top: 30px;
+    color: $dark-gray;
+  }
+  h5 {
     font-family: $body-font-family;
     font-weight: 700;
     color: $dark-gray;
@@ -72,6 +85,9 @@ strong em {
     border: 1px solid $tan;
     background-color: $cream;
     padding: 30px;
+    h3.dark{
+      color: $dark-gray;
+    }
   }
   .intro-text {
     font-size: rem-calc(23);
@@ -79,6 +95,9 @@ strong em {
     text-align: left;
     font-weight: 600;
     line-height: rem-calc(32);
+  }
+  .tip-text {
+    font-size: rem-calc(18);
   }
   p a {
     color: $blue;
@@ -223,6 +242,8 @@ strong em {
   }
 
   .language {
+    display: none;
+    visibility: hidden;
     text-align: right;
     .dropdown-pane {
       background-color: white;
@@ -480,6 +501,11 @@ li.is-active .accordion-title:before {
   &.second-row {
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+}
+.what-is.panels {
+  h3 {
+    margin-top: 10px;
   }
 }
 .panels .column {
@@ -783,7 +809,7 @@ body.get_order {
   li a {
     display: block;
     margin: 15px 0;
-    color: black !important;
+    color: $dark-gray !important;
     text-decoration: none !important;
   }
   li a:hover, li a:active {
