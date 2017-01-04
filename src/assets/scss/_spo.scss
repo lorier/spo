@@ -23,6 +23,23 @@
 // $cream: #f9f3e4;
 // $tan: #ebdebf;
 
+//temporary for alerting missing links
+.pink{
+  color: magenta !important;
+}
+//temporary for moving sections 
+.gray {
+  h2, h3,h4, p, ul, li {
+    color: #b1b0b0 !important;
+  }
+  .callout {
+     background-color: #e4e4e4 !important;
+     border-color: #e4e4e4 !important;
+  }  
+}
+
+
+
 
 $transition: all 0.2s ease-in-out;
 
@@ -99,7 +116,7 @@ strong em {
   .tip-text {
     font-size: rem-calc(18);
   }
-  p a {
+  p a, ol li a {
     color: $blue;
     text-decoration: underline;
   }
@@ -603,7 +620,7 @@ footer {
 //   3.  Home Page
 //   ---------------------
 
-body.index {
+body#index {
   background-color: #f9f3e4;
   min-height: 100%;
 }
@@ -701,7 +718,8 @@ footer {
     margin-right: 10px;
   }
   .email a {
-    display: flex;
+    color: white;
+    // display: flex;
   }
   .share {
    margin: 0; 
@@ -795,6 +813,17 @@ body.get_order {
 
 // Side Menu
 // 
+//you are here highlights
+#am-i-being-stalked .am-i,
+#what-is-a-stalking-protection-order .what,
+#should-i-get-a-stalking-protection-order .should,
+#can-i-get-a-stalking-protection-order .can,
+#how-do-i-get-a-stalking-protection-order .how,
+#now-that-i-have-a-stalking-protection-order .now,
+#resources .resources
+ {
+  color: $green !important;
+}
 .side-menu {
   background-color: $cream;
   border: 1px solid $tan;
