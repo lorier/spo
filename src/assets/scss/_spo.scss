@@ -586,12 +586,26 @@ li.is-active .accordion-title:before {
   .panel {
     height: 585px;
   }
+  .panel p {
+    font-size: 15px;
+  }
 
   .panel h3 {
     font-size: rem-calc(24);
 
   }
 
+}
+@media (max-width: 767px){
+  .panel {
+    height: 550px;
+  }
+  .panel h3 {
+    font-size: 20px;
+  }
+  .panel p {
+    font-size: 12px;
+  }
 }
 @include breakpoint(small only){
 
@@ -850,6 +864,13 @@ body.get_order {
   }
   &.now span {
     content: url('../img/SVG_icons-06.svg');
+  }
+  &.resources {
+
+    span {
+      display: none;
+      visibility: hidden;
+    }
   }
 }
 #safety-tips-resources .accordion h5 {
