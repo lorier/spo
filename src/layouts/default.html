@@ -7,9 +7,29 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset=utf-8>
-    <meta name=description content="{{ description }}">
+    <!-- Search engines -->
+    <meta name="description" content="Resources for victims of stalking and cyber stalking, including information on obtaining legal protection orders in the state of Washington.">
+    <!-- Google Plus -->
+    <!-- Update your html tag to include the itemscope and itemtype attributes. -->
+    <!-- html itemscope itemtype="http://schema.org/{CONTENT_TYPE}" -->
+    <meta itemprop="name" content="King County Stalking Protection Order">
+    <meta itemprop="description" content="Resources for victims of stalking and cyber stalking, including information on obtaining legal protection orders in the state of Washington.">
+    <meta itemprop="image" content="http://stalkingprotectionorder.org/assets/img/ogstalkingpo.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@kcnews">
+    <meta name="twitter:title" content="King County Stalking Protection Order">
+    <meta name="twitter:description" content="Resources for victims of stalking and cyber stalking, including information on obtaining legal protection orders in the state of Washington.">
+    <meta name="twitter:image:src" content="http://stalkingprotectionorder.org/assets/img/ogstalkingpo.png">
+    <!-- Open Graph General (Facebook & Pinterest) -->
+    <meta property="og:url" content="http://stalkingprotectionorder.org">
+    <meta property="og:title" content="King County Stalking Protection Order">
+    <meta property="og:description" content="Resources for victims of stalking and cyber stalking, including information on obtaining legal protection orders in the state of Washington.">
+    <meta property="og:site_name" content="King County Stalking Protection Order">
+    <meta property="og:image" content="http://stalkingprotectionorder.org/assets/img/ogstalkingpo.png">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Stalking Protection Order {{#unlesspage 'index'}} | {{/unlesspage}}{{ title }} </title>
+    <link rel="canonical" href="http://stalkingprotectionorder.org" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:600,600italic,700,700italic,400italic,400|Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
@@ -25,5 +45,15 @@
     {{> body}}
     {{> footer}}
     <script src="{{root}}assets/js/app.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91324017-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
   </body>
 </html>

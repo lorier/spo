@@ -822,6 +822,23 @@ footer {
 body.get_order {
   background-color: white;
 }
+
+.not-found .title-container {
+    margin: 0 auto !important;
+  }
+.not-found.title-wrapper {
+   h1 {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: rem-calc(60);
+    line-height: rem-calc(60);
+  }
+}
+.not-found .content {
+  margin: 0 auto;
+  text-align: center;
+}
 .title-wrapper {
   background: url('../img/green_tile.jpg');
   margin-bottom: 30px;
